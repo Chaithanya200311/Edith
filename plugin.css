@@ -1,62 +1,58 @@
-/* General Styles */
+
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
     color: #3a6ad6;
-    border-radius: 20px; /* Rounded edges for the entire extension */
+    border-radius: 20px;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0); 
 }
 
 .wrapper {
-    border-radius: 20px; /* Rounded edges for the entire extension */
-    overflow: hidden; /* Hide excess rectangular corners */
+    border-radius: 20px;
+    overflow: hidden; 
 }
-/* Header Styles */
+
 #plugin_header {
-    border-top-left-radius: 20px; /* Rounded top-left corner */
+    border-top-left-radius: 20px; 
     border-top-right-radius: 20px; 
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Reduce margin */
+    margin-bottom: 10px; 
 }
 
 #plugin_header img {
-    width: 40px; /* Decrease image width */
-    height: 40px; /* Decrease image height */
+    width: 40px; 
+    height: 40px;
     margin-right: 10px;
 }
 
 #plugin_header h1 {
     margin: 0;
     font-family: 'Russo One', sans-serif;
-    font-size: 24px; /* Decrease font size */
+    font-size: 24px;
 }
 
-/* Container Styles */
 .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);;
-    width: 450px; /* Adjust width as needed */
-    margin: 0 auto; /* Center the container horizontally */
-    height: 230px; /* Adjust height as needed */
-    overflow-y: auto; /* Add scroll if content exceeds height */
+    width: 450px; 
+    margin: 0 auto; 
+    height: 230px; 
+    overflow-y: auto; 
 }
 
-/* Result Circle Styling - Add your styles here */
 #res-circle {
-    /* Add your styles for the result circle */
 }
 
-/* List Styles */
 ul {
     list-style: none;
     padding: 0;
-    max-height: 220px; /* Limit the height of the list */
-    overflow-y: auto; /* Add scroll if content exceeds height */
+    max-height: 220px;
+    overflow-y: auto; 
 }
 
 li {
@@ -73,7 +69,6 @@ li {
     color: #fff;
 }
 
-/* Link Styles */
 a {
     text-decoration: none;
 }

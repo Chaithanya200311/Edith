@@ -17,8 +17,6 @@ chrome.tabs.query({ currentWindow: true, active: true }, function(tabs){
             console.error("Results for current tab not found.");
             return;
         }
-
-        // Check if the result is an object before proceeding
         if (typeof result !== 'object') {
             console.error("Invalid result data type:xx", typeof result);
             return;
@@ -28,7 +26,7 @@ chrome.tabs.query({ currentWindow: true, active: true }, function(tabs){
             if (result.hasOwnProperty(key)) {
                 var newFeature = document.createElement("li");
                 newFeature.textContent = key;
-                newFeature.style.backgroundColor = colors[result[key]] || '#ffffff'; // Default to white if color not found
+                newFeature.style.backgroundColor = colors[result[key]] || '#ffffff';
                 featureList.appendChild(newFeature);
             }
         }

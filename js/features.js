@@ -1,23 +1,13 @@
 
-/*
-$('a').click(function(){
-    alert("You are about to go to "+$(this).attr('href'));
-});
-*/
-
 var result = {};
 //---------------------- 1.  IP Address  ----------------------
 
 var url = window.location.href;
-// alert(url);
 var urlDomain = window.location.hostname;
-
-//url="0x58.0xCC.0xCA.0x62"
 
 var patt = /(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[0-9]?[0-9])(\.|$){4}/;
 var patt2 = /(0x([0-9][0-9]|[A-F][A-F]|[A-F][0-9]|[0-9][A-F]))(\.|$){4}/;
 var ip = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
-
 
 if(ip.test(urlDomain)||patt.test(urlDomain)||patt2.test(urlDomain)){ 
     result["IP Address"]="1";
@@ -25,12 +15,9 @@ if(ip.test(urlDomain)||patt.test(urlDomain)||patt2.test(urlDomain)){
     result["IP Address"]="-1";
 }
 
-//alert(result);
-
 //---------------------- 2.  URL Length  ----------------------
 
 
-//alert(url.length);
 if(url.length<54){
     result["URL Length"]="-1";
 }else if(url.length>=54&&url.length<=75){
@@ -38,8 +25,6 @@ if(url.length<54){
 }else{
     result["URL Length"]="1";
 }
-//alert(result);
-
 
 //---------------------- 3.  Tiny URL  ----------------------
 
@@ -50,7 +35,6 @@ if(onlyDomain.length<7){
 }else{
     result["Tiny URL"]="-1";
 }
-//alert(result);
 
 //---------------------- 4.  @ Symbol  ----------------------
 
@@ -79,8 +63,6 @@ if(patt.test(urlDomain)){
 }
 
 //---------------------- 7.  No. of Sub Domains  ----------------------
-
-//patt=".";
 
 if((onlyDomain.match(RegExp('\\.','g'))||[]).length==1){ 
     result["No. of Sub Domains"]="-1";
@@ -141,8 +123,6 @@ if(patt.test(onlyDomain)){
     result["HTTPS in URL's domain part"]="-1";
 }
 
-// alert(result);
-
 //---------------------- 13.  Request URL  ----------------------
 
 var imgTags = document.getElementsByTagName("img");
@@ -165,7 +145,6 @@ for(var i = 0; i < imgTags.length; i++){
 }
 var totalCount=phishCount+legitCount;
 var outRequest=(phishCount/totalCount)*100;
-//alert(outRequest);
 
 if(outRequest<22){
     result["Request URL"]="-1";
@@ -204,8 +183,6 @@ if(outRequest<31){
 }else{
     result["Anchor"]="1";
 }
-
-//alert(allhrefs);
 
 //---------------------- 15. Links in script and link  ----------------------
 
@@ -257,8 +234,6 @@ if(outRequest<17){
     result["Script & Link"]="1";
 }
 
-//alert(allhrefs);
-
 //---------------------- 16.Server Form Handler ----------------------
 
 var forms = document.getElementsByTagName("form");
@@ -304,5 +279,4 @@ if(iframes.length == 0) {
 
 chrome.runtime.sendMessage(result, function(response) {
     console.log(result);
-    //console.log(response);
 });
