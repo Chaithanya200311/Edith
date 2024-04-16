@@ -4,6 +4,8 @@ html, body {
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
     color: #3a6ad6;
+    border-radius: 20px; /* Rounded edges for the entire extension */
+    overflow: hidden;
     background-color: rgba(255, 255, 255, 0); 
 }
 

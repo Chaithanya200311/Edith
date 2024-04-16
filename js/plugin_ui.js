@@ -1,7 +1,7 @@
 var colors = {
     "-1":"#3a6ad6",
-    "0":"#ffeb3c",
-    "1":"#ff8b66"
+    "0":"#FFAA01",
+    "1":"#ff0101"
 };
 var featureList = document.getElementById("features");
 
