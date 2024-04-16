@@ -7,7 +7,7 @@
     "service_worker": "js/bg-loader.js"
   },
   "action": {
-      "default_popup": "plugin.html"
+      "default_popup": "plugin_ui.html"
     },
     "content_scripts":[
       {
