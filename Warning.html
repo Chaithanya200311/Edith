@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>EDITH WARNING</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+  <head>
+    <title>EDITH WARNING</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <h1>The website you are trying to access might be a <span style="color:red;"><strong>phishing website</strong></span></h1> 
+    </div>
+    <section>
+      <div class="text-center">
+        <button type="button" class="btn btn-danger" onclick="goBack()"><strong>Proceed with Caution</strong></button>
+      </div>
+    </section>
+    <script>
+      function goBack() {
+            window.history.back();
+        }
+        function disableExtension() {
+          chrome.runtime.onMessage.removeListener(messageListener);
+          chrome.storage.local.clear();
+          console.log("Extension disabled.");
+        }
 
-<div class="jumbotron text-center">
-  <h1>The website you are trying to access might be a <span style="color:red;"><strong>phishing website</strong></span></h1> 
-</div>
-<section>
-<div class="text-center">
-    <button type="button" class="btn btn-danger"><strong>Proceed with Caution</strong></button>
-  </div>
-</section>
+        window.addEventListener('beforeunload', function(event) {
+          disableExtension();
+        });
+    </script>
 </body>
 </html>
